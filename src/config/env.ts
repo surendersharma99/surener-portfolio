@@ -8,16 +8,16 @@ const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "production"]).default("development"),
-    DATABASE_URL: z.url(),
+    DATABASE_URL: z.string().url().default("postgresql://user:pass@localhost:5432/db"),
     NEXT_RUNTIME: z.enum(["nodejs", "edge"]).default("nodejs"),
-    GITHUB_CLIENT_ID: z.string().min(1),
-    GITHUB_CLIENT_SECRET: z.string().min(1),
-    GOOGLE_CLIENT_ID: z.string().min(1),
-    GOOGLE_CLIENT_SECRET: z.string().min(1),
-    BETTER_AUTH_SECRET: z.string().min(1),
+    GITHUB_CLIENT_ID: z.string().default("dummy-github-client-id"),
+    GITHUB_CLIENT_SECRET: z.string().default("dummy-github-client-secret"),
+    GOOGLE_CLIENT_ID: z.string().default("dummy-google-client-id"),
+    GOOGLE_CLIENT_SECRET: z.string().default("dummy-google-client-secret"),
+    BETTER_AUTH_SECRET: z.string().default("dummy-better-auth-secret-key-for-testing"),
     BETTER_AUTH_URL: z.url().default("http://localhost:3000"),
-    UMAMI_API_KEY: z.string().min(1),
-    GITHUB_TOKEN: z.string().min(1)
+    UMAMI_API_KEY: z.string().default("dummy-umami-api-key"),
+    GITHUB_TOKEN: z.string().default("dummy-github-token")
   },
   /*
    * Environment variables available on the client (and server).
@@ -26,9 +26,9 @@ const env = createEnv({
    */
   client: {
     NEXT_PUBLIC_APP_URL: z.url().default("http://localhost:3000"),
-    NEXT_PUBLIC_GITHUB_USERNAME: z.string().min(1),
-    NEXT_PUBLIC_AVAILABLE_STATUS: z.coerce.boolean(),
-    NEXT_PUBLIC_UMAMI_WEBSITE_ID: z.string().min(1)
+    NEXT_PUBLIC_GITHUB_USERNAME: z.string().default("test-user"),
+    NEXT_PUBLIC_AVAILABLE_STATUS: z.coerce.boolean().default(true),
+    NEXT_PUBLIC_UMAMI_WEBSITE_ID: z.string().default("dummy-site-id")
   },
 
   /*

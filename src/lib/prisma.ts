@@ -1,21 +1,11 @@
 import { PrismaClient } from '@prisma/client'
-import { withAccelerate } from '@prisma/extension-accelerate'
 
 const globalForPrisma = global as unknown as {
-    prisma?: PrismaClient | any
+    prisma?: PrismaClient
 }
 
 function createPrismaClient() {
-    const base = new PrismaClient()
-
-    // Enable the accelerate extension only when explicitly requested
-    // (e.g. PRISMA_ACCELERATE=true). This prevents requiring a
-    // Data-Proxy style `prisma+...` URL during local builds.
-    if (process.env.PRISMA_ACCELERATE === 'true') {
-        return base.$extends(withAccelerate())
-    }
-
-    return base
+    return new PrismaClient()
 }
 
 const prisma = globalForPrisma.prisma || createPrismaClient()
