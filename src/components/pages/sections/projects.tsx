@@ -13,14 +13,79 @@ import { motion } from "motion/react";
 const Projects = () => {
   const projects = [
     {
+      title: "SnapTalk - Talk With Strangers",
+      description:
+        "A android app built with Flutter, feturing a chat system that allows users to connect and communicate with strangers in real-time.",
+      tags: ["Flutter", "Android", "Dart"],
+      github: null,
+      image: "/projects/snaptalk.png",
+      live: "https://play.google.com/store/apps/details?id=com.backventures.snaptalk",
+      date: "Jun, 2026",
+      status: "completed",
+    },
+    {
+      title: "Bigwood - A Mordern Furniture Store",
+      description:
+        "A furniture store website, built with Wordpress, offering a seamless shopping experience and stunning visuals.",
+      tags: ["Website", "Furniture", "Wordpress"],
+      github: null,
+      image: "/projects/Biggwood.png",
+      live: "https://biggwood.in/wp/",
+      date: "Jun, 2025",
+      status: "completed",
+    },
+    {
       title: "Own Portfolio Website",
       description:
         "A personal portfolio website showcasing projects, skills, and contact information.",
       tags: ["Portfolio", "Fullstack", "Personal"],
-      github: "https://github.com/NotStark/portfolio",
+      github: null,
       image: "/projects/portfolio-screenshot.png",
       live: env.NEXT_PUBLIC_APP_URL,
-      date: "Sep, 2025",
+      date: "Mar, 2026",
+      status: "completed",
+    },
+    {
+      title: "Ramstein Global Ventures",
+      description: "A digital marketing agency website built with Wordpress, featuring a sleek design and smooth animations.",
+      tags: ["Website", "Marketing", "Wordpress"],
+      github: "https://github.com/Notstark/RamsteinGlobalVentures",
+      image: "/projects/ramsteinglobalventures.png",
+      live: "https://ramsteinglobalventures.com/",
+      date: "Oct, 2025",
+      status: "completed",
+    },
+    {
+      title: "Wavecarenutritions",
+      description:
+        "A nutrition and wellness website, built with Wordpress, offering a seamless user experience and informative content.",
+      tags: ["Website", "Furniture", "Wordpress"],
+      github: null,
+      image: "/projects/Wavecarenutritions.png",
+      live: "https://wavecarenutritions.store/",
+      date: "Dec, 2025",
+      status: "completed",
+    },
+    {
+      title: "Hustle2holiday",
+      description:
+        "A travel agency website, built with Wordpress, offering a seamless booking experience and stunning visuals.",
+      tags: ["Travel", "Booking", "Wordpress"],
+      github: null,
+      image: "/projects/hustle2holiday.png",
+      live: "https://hustle2holiday.com/",
+      date: "Nov, 2025",
+      status: "completed",
+    },
+    {
+      title: "Komaltourtravel",
+      description:
+        "A car rental website, built with Wordpress, offering a seamless booking experience and stunning visuals.",
+      tags: ["Travel", "Booking", "Wordpress"],
+      github: null,
+      image: "/projects/komaltourtravel.png",
+      live: "https://komaltourtravel.com/",
+      date: "Dec, 2025",
       status: "completed",
     },
     {
@@ -42,39 +107,7 @@ const Projects = () => {
       github: null,
       image: "/projects/unnamed.png",
       live: "https://play.google.com/store/apps/details?id=com.d_grade.app",
-      date: "Dec, 2024",
-      status: "completed",
-    },
-    {
-      title: "Ramstein Global Ventures",
-      description: "A digital marketing agency website built with Wordpress, featuring a sleek design and smooth animations.",
-      tags: ["Website", "Marketing", "Wordpress"],
-      github: "https://github.com/Notstark/RamsteinGlobalVentures",
-      image: "/projects/ramsteinglobalventures.png",
-      live: "https://ramsteinglobalventures.com/",
-      date: "Oct, 2024",
-      status: "completed",
-    },
-    {
-      title: "Hustle2holiday",
-      description:
-        "A travel agency website, built with Wordpress, offering a seamless booking experience and stunning visuals.",
-      tags: ["Travel", "Booking", "Wordpress"],
-      github: null,
-      image: "/projects/hustle2holiday.png",
-      live: "https://hustle2holiday.com/",
-      date: "Dec, 2024",
-      status: "completed",
-    },
-    {
-      title: "Komaltourtravel",
-      description:
-        "A car rental website, built with Wordpress, offering a seamless booking experience and stunning visuals.",
-      tags: ["Travel", "Booking", "Wordpress"],
-      github: null,
-      image: "/projects/komaltourtravel.png",
-      live: "https://komaltourtravel.com/",
-      date: "Dec, 2024",
+      date: "Dec, 2023",
       status: "completed",
     },
   ];

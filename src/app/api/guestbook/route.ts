@@ -6,7 +6,7 @@ import { auth } from "@/lib/auth";
 // List all guestbook entries
 export async function GET() {
     try {
-        const entries = await prisma.guestbookEntry.findMany({
+        const entries = await (prisma as any).guestbookEntry.findMany({
             include: {
                 user: {
                     select: {
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
             );
         }
 
-        const newEntry = await prisma.guestbookEntry.create({
+        const newEntry = await (prisma as any).guestbookEntry.create({
             data: {
                 content: content.trim(),
                 userId: user.id,
@@ -99,7 +99,7 @@ export async function DELETE(req: Request) {
             return NextResponse.json({ success: false, message: "Guestbook ID is required" }, { status: 400 });
         }
 
-        const entry = await prisma.guestbookEntry.findUnique({
+        const entry = await (prisma as any).guestbookEntry.findUnique({
             where: { id }
         });
 
@@ -107,7 +107,7 @@ export async function DELETE(req: Request) {
             return NextResponse.json({ success: false, message: "Guestbook Entry not found" }, { status: 404 });
         }
 
-        await prisma.guestbookEntry.delete({ where: { id }, });
+        await (prisma as any).guestbookEntry.delete({ where: { id }, });
 
         return NextResponse.json({ success: true, message: "Guestbook entry deleted successfully" },);
     } catch (err: any) {
